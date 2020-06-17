@@ -3,7 +3,7 @@
 ## Topologi Infrastruktur
 Berikut adalah gambar topologi jaringan yang digunakan dalam project ini.
 
-![Topologi Jaringan](https://drive.google.com/file/d/1Ryk1jekqumOf9oOczDgQ8LJgBZNTbT9E/view?usp=sharing)
+![Topologi Infrastruktur](https://drive.google.com/file/d/1Ryk1jekqumOf9oOczDgQ8LJgBZNTbT9E/view?usp=sharing)
 
 ## Vagrantfile
 Vagrantfile digunakan untuk mengatur konfigurasi pada VM. Spesifikasi yang digunakan didalam box Vagrant adalah sebagai berikut :
