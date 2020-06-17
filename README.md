@@ -7,7 +7,7 @@ Berikut adalah gambar topologi jaringan yang digunakan dalam project ini.
 
 ## Vagrantfile
 Vagrantfile digunakan untuk mengatur konfigurasi pada VM. Spesifikasi yang digunakan didalam box Vagrant adalah sebagai berikut :
-  * Menggunakan box **hashicorp/bionic64**
+  * Os ubuntu, menggunakan box **ubuntu/bionic64**
   * Memory 2048 Mb
   
  ## Provisioning
