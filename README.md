@@ -1,4 +1,4 @@
-# Small Project 1: Sosmed Cilsy
+# Small Project Cilsy 1: Sosmed 
 
 ## Topologi Infrastruktur
 Berikut adalah gambar topologi jaringan yang digunakan dalam project ini.
