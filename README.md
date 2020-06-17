@@ -13,7 +13,7 @@ Vagrantfile digunakan untuk mengatur konfigurasi pada VM. Spesifikasi yang digun
  ## Provisioning
  Provisioning dijalankan saat vagrant up menggunakan bash script **setup.sh**, Script ini digunakan untuk menginstall software sebagai berikut :
   * php-fpm7.2
-  * Mysql
+  * MySql
   * Nginx
   
  ## Dokumentasi
@@ -35,4 +35,5 @@ Vagrantfile digunakan untuk mengatur konfigurasi pada VM. Spesifikasi yang digun
    ```bash
    bash createdb-mysql
    ```
+   5. Run aplikasi web dengan IP Private 192.168.100.2
 
