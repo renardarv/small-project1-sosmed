@@ -26,12 +26,12 @@ Vagrantfile digunakan untuk mengatur konfigurasi pada VM. Spesifikasi yang digun
    ```bash
    vagrant ssh
    ```
-  4. Konfigurasi Database
-  * Create user:
+  4. Konfigurasi Database:
+  * Create mysql user:
    ```bash
    bash create-mysql-user
    ```
-  * Create Database:
+  * Create mysql database:
    ```bash
    bash createdb-mysql
    ```
