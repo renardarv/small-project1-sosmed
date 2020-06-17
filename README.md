@@ -18,7 +18,6 @@ Vagrantfile digunakan untuk mengatur konfigurasi pada VM. Spesifikasi yang digun
   
  ## Dokumentasi
   1. Git Clone
-  
   * Masuk ke folder project, jalankan script:
    ```bash
    vagrant up
@@ -27,9 +26,7 @@ Vagrantfile digunakan untuk mengatur konfigurasi pada VM. Spesifikasi yang digun
    ```bash
    vagrant ssh
    ```
-   
   2. Konfigurasi Database
-  
   * Create user:
    ```bash
    bash create-mysql-user
