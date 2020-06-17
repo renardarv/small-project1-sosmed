@@ -18,11 +18,11 @@ Vagrantfile digunakan untuk mengatur konfigurasi pada VM. Spesifikasi yang digun
   
  ## Dokumentasi
   1. Git Clone
-  2. Masuk ke folder project, jalankan Vagrantfile dengan command:
+  2. Masuk ke folder project, running Vagrantfile dengan command:
    ```bash
    vagrant up
    ```
-  3. Setelah selesai proses instalasi vagrant jalankan vagrant dengan command:
+  3. Setelah selesai proses instalasi vagrant, running VM dengan command:
    ```bash
    vagrant ssh
    ```
