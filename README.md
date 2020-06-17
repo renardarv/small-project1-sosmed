@@ -7,7 +7,7 @@ Berikut adalah gambar topologi jaringan yang digunakan dalam project ini.
 
 ## Vagrantfile
 Vagrantfile digunakan untuk mengatur konfigurasi pada VM. Spesifikasi yang digunakan didalam box Vagrant adalah sebagai berikut :
-  * OS Ubuntu, menggunakan box **hashicorp/bionic64**
+  * Menggunakan box **hashicorp/bionic64**
   * Memory 2048 Mb
   
  ## Provisioning
@@ -18,15 +18,15 @@ Vagrantfile digunakan untuk mengatur konfigurasi pada VM. Spesifikasi yang digun
   
  ## Dokumentasi
   1. Git Clone
-  * Masuk ke folder project, jalankan script:
+  2. Masuk ke folder project, jalankan Vagrantfile dengan command:
    ```bash
    vagrant up
    ```
-  * Setelah selesai, jalankan script:
+  3. Setelah selesai proses instalasi vagrant jalankan vagrant dengan command:
    ```bash
    vagrant ssh
    ```
-  2. Konfigurasi Database
+  4. Konfigurasi Database
   * Create user:
    ```bash
    bash create-mysql-user
