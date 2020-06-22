@@ -27,7 +27,7 @@ cp /vagrant/{create-mysql-user,createdb-mysql} /bin
 user=`cat /vagrant/sosial-media/config.php | grep -E "[$]db_user " | awk '{print$3}' | sed 's/[";]//g'`
 host=`cat /vagrant/sosial-media/config.php | grep -E "[$]db_host " | awk '{print$3}' | sed 's/[";]//g'`
 pass=`cat /vagrant/sosial-media/config.php | grep -E "[$]db_pass " | awk '{print$3}' | sed 's/[";]//g'`
-db=`cat /vagrant/sosial-media/config.php | grep -E "[$]db_db " | awk '{print$3}' | sed 's/[";]//g'`
+db=`cat /vagrant/sosial-media/config.php | grep -E "[$]db_name " | awk '{print$3}' | sed 's/[";]//g'`
 
 echo "Create user $user..."
 sudo mysql -u root << EOF
