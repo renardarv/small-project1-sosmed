@@ -8,7 +8,7 @@ apt-get install -y nginx
 
 echo "Setup nginx ..."
 unlink /etc/nginx/sites-enabled/default
-cp /vagrant/nginx.conf /etc/nginx/sites-available
+cp nginx.conf /etc/nginx/sites-available
 ln -s /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/
 systemctl reload nginx
 
@@ -19,5 +19,5 @@ echo "Installing mysql-server ..."
 apt-get install -y mysql-server
 
 echo "Installing app sosmed ..."
-cp -rf /vagrant/sosial-media/* /var/www/html
-cp /vagrant/{create-mysql-user.sh,createdb-mysql.sh} /bin
+cp -rf sosial-media/* /var/www/html
+cp {create-mysql-user.sh,createdb-mysql.sh} /bin
