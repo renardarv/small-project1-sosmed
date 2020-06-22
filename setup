@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Bash untuk instalasi nginx, php-fpm, mysql, dan aplikasi web sosmed
+# Bash for Instalation nginx, php-fpm, mysql, database dan application web sosmed
 
 echo "Installing nginx ..."
 apt-get update
@@ -8,7 +8,7 @@ apt-get install -y nginx
 
 echo "Setup nginx ..."
 unlink /etc/nginx/sites-enabled/default
-cp nginx.conf /etc/nginx/sites-available
+cp /vagrant/nginx.conf /etc/nginx/sites-available
 ln -s /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/
 systemctl reload nginx
 
@@ -19,5 +19,39 @@ echo "Installing mysql-server ..."
 apt-get install -y mysql-server
 
 echo "Installing app sosmed ..."
-cp -rf sosial-media/* /var/www/html
-cp {create-mysql-user.sh,createdb-mysql.sh} /bin
+cp -rf /vagrant/sosial-media/* /var/www/html
+cp /vagrant/{create-mysql-user,createdb-mysql} /bin
+
+
+# Create user mysql based on config.php
+user=`cat /vagrant/sosial-media/config.php | grep -E "[$]db_user " | awk '{print$3}' | sed 's/[";]//g'`
+host=`cat /vagrant/sosial-media/config.php | grep -E "[$]db_host " | awk '{print$3}' | sed 's/[";]//g'`
+pass=`cat /vagrant/sosial-media/config.php | grep -E "[$]db_pass " | awk '{print$3}' | sed 's/[";]//g'`
+db=`cat /vagrant/sosial-media/config.php | grep -E "[$]db_db " | awk '{print$3}' | sed 's/[";]//g'`
+
+echo "Create user $user..."
+sudo mysql -u root << EOF
+create user '$user'@'$host' identified by '$pass';
+grant all privileges on *.* to '$user'@'$host';
+EOF
+
+
+# Create database basen on config.php
+oldDb=`sudo ls /var/lib/mysql | grep $db`;
+
+if [[ $db != $oldDb ]]; then
+
+        echo "Create database $db..."
+        sudo mysql -u $user -p$pass <<EOF
+        create database $db;
+EOF
+
+        sudo mysql -u $user -p$pass $db < /var/www/html/dump.sql
+
+        echo "$db has been succesfully created!"
+
+else
+
+        echo "$db has existed!"
+
+fi
