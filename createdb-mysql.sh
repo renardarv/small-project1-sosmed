@@ -16,8 +16,7 @@ if [[ $db != $oldDb ]]; then
 	create database $db;
 EOF
 
-	sudo mysql -u $user -p$pass $db < /var/www/html/dump.sql <<EOF
-EOF
+	sudo mysql -u $user -p$pass $db < /var/www/html/dump.sql
 
 	echo "$db has been succesfully created!"
 
